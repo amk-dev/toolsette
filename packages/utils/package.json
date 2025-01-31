@@ -1,6 +1,6 @@
 {
   "name": "@toolsette/utils",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "utility functions to work with toolsette tools",
   "repository": {
     "type": "git",
