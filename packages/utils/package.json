@@ -1,9 +1,31 @@
 {
   "name": "@toolsette/utils",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "utility functions to work with toolsette tools",
-  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amk-dev/toolsette.git"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "pnpm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,6 +37,8 @@
   },
   "devDependencies": {
     "ai": "^4.1.12",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3",
     "zod": "^3.24.1"
   }
 }

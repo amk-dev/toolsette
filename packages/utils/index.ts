@@ -1,5 +1,5 @@
-import { z } from "zod";
-import { Tool } from "ai";
+import type { ZodType } from "zod";
+import type { Tool } from "ai";
 
 export type ToolsetteAuth = {
   type: "Bearer";
@@ -7,7 +7,7 @@ export type ToolsetteAuth = {
 };
 
 export type ToolsetteTool = {
-  parameters: z.ZodType<{}>;
+  parameters: ZodType<{}>;
   function: (...args: any[]) => Promise<unknown>;
   name: string;
   description: string;

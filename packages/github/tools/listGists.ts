@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { ofetch } from "ofetch";
 import { Result, ok, err } from "neverthrow";
-import { ToolsetteTool } from "@toolsette/utils";
+import type { ToolsetteTool } from "@toolsette/utils";
 
 // Zod schema for the input parameters
 const listGistsSchema = z.object({
@@ -35,7 +35,7 @@ async function listGistsFunction(
   metadata: { auth: { type: "Bearer"; apiKey: string } }
 ): Promise<Result<string, Error>> {
   try {
-    const query = {
+    const query: ListGistsInput = {
       per_page: input.per_page,
       page: input.page,
     };
